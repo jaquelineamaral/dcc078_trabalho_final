@@ -1,3 +1,5 @@
+package main;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,5 +36,9 @@ public class Estoque {
 
     public int getQuantidade(String nomeProduto) {
         return produtos.getOrDefault(nomeProduto, 0);
+    }
+
+    public Map<String, Integer> getProdutos() {
+        return produtos;
     }
 }
