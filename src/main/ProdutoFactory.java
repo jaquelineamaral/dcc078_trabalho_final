@@ -3,13 +3,14 @@ package main;
 
 public class ProdutoFactory {
 
+    static Class<?> classe;
+    static Object objeto;
+
     public static Produto criarProduto(String categoriaProduto) {
-        Class classe = null;
-        Object objeto = null;
 
         try {
-            classe = Class.forName("src.main." + categoriaProduto);
-            objeto = classe.newInstance();
+            classe = Class.forName("main." + categoriaProduto);
+                        objeto = classe.getDeclaredConstructor().newInstance();
         } catch (Exception ex) {
             throw new IllegalArgumentException("Categoria de produto não cadastrada");
         }

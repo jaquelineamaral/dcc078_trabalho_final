@@ -7,18 +7,11 @@ public class Eletronico extends Produto{
         super(nome, preco);
     }
 
+    public Eletronico(){}
+
     @Override
     public String getCategoria() {
         return "Eletronico";
     }
 
-    @Override
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    @Override
-    public void setPreco(float preco) {
-        this.preco = preco;
-    }
 }

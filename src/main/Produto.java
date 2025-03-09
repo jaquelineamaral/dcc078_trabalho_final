@@ -12,7 +12,23 @@ public abstract class Produto {
         this.preco = preco;
     }
 
+    public Produto(){}
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public abstract String getCategoria();
-    public abstract void setNome(String nome);
-    public abstract void setPreco(float preco);
 }

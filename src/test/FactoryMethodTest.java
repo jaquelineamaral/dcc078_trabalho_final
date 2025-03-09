@@ -21,11 +21,12 @@ public class FactoryMethodTest {
             assertEquals("Categoria de produto não cadastrada", e.getMessage());
         }
     }
-/*
+
+    /*
     @Test
     void deveRetornarExcecaoParaCategoriaProdutoInvalida() {
         try {
-            Produto produto = ProdutoFactory.criarProduto("Teste");
+            Produto produto = ProdutoFactory.criarProduto("Estoque");
             produto.setNome("TesteFactoryMethod");
             produto.setPreco(3.00F);
             fail();
@@ -33,5 +34,18 @@ public class FactoryMethodTest {
             assertEquals("Categoria de produto inválida", e.getMessage());
         }
     }
-*/
+    */
+
+    @Test
+    void deveRetornarCategoriaRoupa() {
+        Produto produto = ProdutoFactory.criarProduto("Roupa");
+        assertEquals("Roupa", produto.getCategoria());
+    }
+
+    @Test
+    void deveRetornarCategoriaEletronico() {
+        Produto produto = ProdutoFactory.criarProduto("Eletronico");
+        assertEquals("Eletronico", produto.getCategoria());
+    }
+
 }
