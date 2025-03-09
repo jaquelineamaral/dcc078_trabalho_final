@@ -1,7 +1,7 @@
-package main;
+package main.produto;
 
 
-public class Roupa extends Produto{
+public class Roupa extends Produto {
 
     public Roupa(String nome, float preco) {
         super(nome, preco);

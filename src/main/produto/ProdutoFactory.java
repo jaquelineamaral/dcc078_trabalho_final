@@ -1,4 +1,4 @@
-package main;
+package main.produto;
 
 
 public class ProdutoFactory {

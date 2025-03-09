@@ -1,4 +1,4 @@
-package main;
+package main.produto;
 
 import java.util.HashMap;
 import java.util.Map;

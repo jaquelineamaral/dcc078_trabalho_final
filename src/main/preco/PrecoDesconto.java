@@ -1,4 +1,4 @@
-package main;
+package main.preco;
 
 public class PrecoDesconto implements Precificacao {
 

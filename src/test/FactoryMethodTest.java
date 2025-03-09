@@ -1,7 +1,7 @@
 package test;
 
-import main.Produto;
-import main.ProdutoFactory;
+import main.produto.Produto;
+import main.produto.ProdutoFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

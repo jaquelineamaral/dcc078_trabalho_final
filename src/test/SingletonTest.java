@@ -1,7 +1,8 @@
 package test;
 
-import main.Estoque;
+import main.produto.Estoque;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 

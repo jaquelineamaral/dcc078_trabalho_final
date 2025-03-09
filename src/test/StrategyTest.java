@@ -1,6 +1,10 @@
 package test;
 
-import main.*;
+import main.preco.PrecoDesconto;
+import main.preco.PrecoFixo;
+import main.produto.Estoque;
+import main.produto.Produto;
+import main.produto.ProdutoFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
