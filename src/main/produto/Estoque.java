@@ -1,10 +1,9 @@
 package main.produto;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
-public class Estoque {
+public class Estoque extends Observable {
 
     private static Estoque instancia;
     private Map<String, Integer> produtos = new HashMap<>();
@@ -22,6 +21,8 @@ public class Estoque {
 
     public void adicionarProduto(String nomeProduto, int quantidade) {
         produtos.put(nomeProduto, produtos.getOrDefault(nomeProduto, 0) + quantidade); //retornar 0 se o produto nao estiver no dicionario
+        setChanged();
+        notifyObservers();
     }
 
     public boolean removerProduto(String nomeProduto, int quantidade) {
@@ -41,4 +42,5 @@ public class Estoque {
     public Map<String, Integer> getProdutos() {
         return produtos;
     }
+
 }

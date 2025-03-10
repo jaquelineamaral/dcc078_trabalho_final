@@ -9,8 +9,8 @@ public class ProdutoFactory {
     public static Produto criarProduto(String categoriaProduto) {
 
         try {
-            classe = Class.forName("main." + categoriaProduto);
-                        objeto = classe.getDeclaredConstructor().newInstance();
+            classe = Class.forName("main.produto." + categoriaProduto);
+            objeto = classe.getDeclaredConstructor().newInstance();
         } catch (Exception ex) {
             throw new IllegalArgumentException("Categoria de produto não cadastrada");
         }
