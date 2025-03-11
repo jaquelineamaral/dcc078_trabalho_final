@@ -1,6 +1,7 @@
 package main.pedido;
 
 import main.notificacao.Cliente;
+import main.preco.GarantiaEstendidaDecorator;
 import main.produto.Produto;
 
 import java.util.ArrayList;
@@ -34,6 +35,10 @@ public class Pedido {
         return estado;
     }
 
+    public Produto getProduto() {
+        return produto;
+    }
+
     public void avancarEstado() {
         this.estado = estado.proximoEstado();
         this.memento.add(this.estado);
@@ -49,4 +54,12 @@ public class Pedido {
         }
         this.estado = this.memento.get(indice);
     }
+
+    public void adicionarGarantia(float valorGarantia) {
+        if (valorGarantia > 0) {
+            this.produto = new GarantiaEstendidaDecorator(this.produto, valorGarantia);
+        }
+    }
+
+
 }
