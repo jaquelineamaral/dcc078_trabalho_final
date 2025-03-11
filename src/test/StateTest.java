@@ -1,6 +1,9 @@
 package test;
 
+import main.notificacao.Cliente;
 import main.pedido.Pedido;
+import main.produto.Produto;
+import main.produto.ProdutoFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +16,13 @@ public class StateTest {
 
     @BeforeEach
     public void before() {
-        pedido = new Pedido();
+        Cliente cliente = new Cliente("João", "joao@gmail.com");
+
+        Produto produto = ProdutoFactory.criarProduto("Roupa");
+        produto.setNome("Blusa");
+        produto.setPreco(50.00F);
+
+        pedido = new Pedido(cliente, produto);
     }
 
     @Test
