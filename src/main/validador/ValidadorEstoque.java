@@ -9,7 +9,7 @@ public class ValidadorEstoque extends ValidadorPedido {
     public String validar(Pedido pedido) {
 
         Estoque estoque = Estoque.getInstancia();
-        int quantidadeDisponivel = estoque.getQuantidade(pedido.getProduto().getNome());
+        int quantidadeDisponivel = estoque.getQuantidade(pedido.getProduto());
 
         if (quantidadeDisponivel >= 1) {
             return "Produto disponível.";

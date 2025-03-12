@@ -2,7 +2,6 @@ package test;
 
 import main.notificacao.Cliente;
 import main.pedido.Pedido;
-import main.produto.Eletronico;
 import main.produto.Estoque;
 import main.produto.Produto;
 import main.produto.ProdutoFactory;
@@ -47,7 +46,7 @@ class ChainOfResponsabilityTest {
         validadorEntrega.setProximoValidador(validadorPagamento);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 5);
+        estoque.adicionarProduto(produto, 5);
 
         assertEquals("Pagamento aprovado.", validador.processar(pedido));
     }
@@ -78,7 +77,7 @@ class ChainOfResponsabilityTest {
         validadorEntrega.setProximoValidador(validadorPagamento);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 5);
+        estoque.adicionarProduto(produto, 5);
 
         assertEquals("Erro: Entrega não disponível para esta região.", validador.processar(pedido));
     }
@@ -93,7 +92,7 @@ class ChainOfResponsabilityTest {
         validadorEntrega.setProximoValidador(validadorPagamento);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 5);
+        estoque.adicionarProduto(produto, 5);
 
         assertEquals("Erro: Pagamento recusado.", validador.processar(pedido));
     }

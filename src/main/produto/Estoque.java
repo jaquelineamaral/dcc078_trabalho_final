@@ -6,7 +6,7 @@ import java.util.*;
 public class Estoque extends Observable {
 
     private static Estoque instancia;
-    private Map<String, Integer> produtos = new HashMap<>();
+    private Map<Produto, Integer> produtos = new HashMap<>();
 
 
     private Estoque() {}
@@ -19,27 +19,17 @@ public class Estoque extends Observable {
         return instancia;
     }
 
-    public void adicionarProduto(String nomeProduto, int quantidade) {
-        produtos.put(nomeProduto, produtos.getOrDefault(nomeProduto, 0) + quantidade); //retornar 0 se o produto nao estiver no dicionario
+    public void adicionarProduto(Produto produto, int quantidade) {
+        produtos.put(produto, produtos.getOrDefault(produto, 0) + quantidade); //retornar 0 se o produto nao estiver no dicionario
         setChanged();
         notifyObservers();
     }
 
-    public boolean removerProduto(String nomeProduto, int quantidade) {
-        //se a quant de produtos que tenho em estoque for maior que a quant que quero remover, subtraio
-        if(produtos.getOrDefault(nomeProduto, 0) > quantidade) {
-            produtos.put(nomeProduto, produtos.get(nomeProduto) - quantidade);
-            return true;
-        }
-
-        return false;
+    public int getQuantidade(Produto produto) {
+        return produtos.getOrDefault(produto, 0);
     }
 
-    public int getQuantidade(String nomeProduto) {
-        return produtos.getOrDefault(nomeProduto, 0);
-    }
-
-    public Map<String, Integer> getProdutos() {
+    public Map<Produto, Integer> getProdutos() {
         return produtos;
     }
 

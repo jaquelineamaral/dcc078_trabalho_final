@@ -22,7 +22,8 @@ public class TemplateMethodTest {
         produto.setPreco(2000F);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 3);
+        estoque.getProdutos().clear();
+        estoque.adicionarProduto(produto, 3);
 
         RelatorioEstoque relatorioEstoque = new RelatorioPdf();
 
@@ -41,8 +42,9 @@ public class TemplateMethodTest {
         produto2.setPreco(180F);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto1.getNome(), 3);
-        estoque.adicionarProduto(produto2.getNome(), 7);
+        estoque.getProdutos().clear();
+        estoque.adicionarProduto(produto1, 3);
+        estoque.adicionarProduto(produto2, 7);
 
         RelatorioEstoque relatorioEstoque = new RelatorioCsv();
 

@@ -22,7 +22,7 @@ public class ObserverTest {
         Produto produto = ProdutoFactory.criarProduto("Roupa");
         produto.setNome("Calça");
         produto.setPreco(100F);
-        Estoque.getInstancia().adicionarProduto(produto.getNome(), 20);
+        Estoque.getInstancia().adicionarProduto(produto, 20);
 
         assertEquals("João confira nossos novos produtos disponíveis!", cliente1.getNotificacao());
         assertEquals("Maria confira nossos novos produtos disponíveis!", cliente2.getNotificacao());

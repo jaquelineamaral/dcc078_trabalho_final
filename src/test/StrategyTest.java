@@ -19,7 +19,7 @@ public class StrategyTest {
         produto.setPreco(50.00F);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 3);
+        estoque.adicionarProduto(produto, 3);
 
         PrecoDesconto desconto = new PrecoDesconto(0.3F);
 
@@ -33,7 +33,7 @@ public class StrategyTest {
         produto.setPreco(2000F);
 
         Estoque estoque = Estoque.getInstancia();
-        estoque.adicionarProduto(produto.getNome(), 1);
+        estoque.adicionarProduto(produto, 1);
 
         PrecoFixo desconto = new PrecoFixo();
 
